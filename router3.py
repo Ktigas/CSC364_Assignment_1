@@ -240,7 +240,6 @@ def processing_thread(connection, ip, port, forwarding_table_with_range, default
         # Otherwise, this shouldn't happen based on routing tables
         if new_ttl <= 0:
             print("DISCARD:", new_packet)
-            write_to_file('./output/discarded_by_router_3.txt', new_packet)
         elif sending_port == '127.0.0.1':
             print("OUT:", payload)
             write_to_file('./output/out_router_3.txt', payload)

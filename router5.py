@@ -161,7 +161,6 @@ def processing_thread(connection, ip, port, forwarding_table_with_range, default
         # Default gateway is 127.0.0.1, meaning Router 5 is an endpoint
         if new_ttl <= 0:
             print("DISCARD:", new_packet)
-            write_to_file('./output/discarded_by_router_5.txt', new_packet)
         elif sending_port == '127.0.0.1':
             # Local delivery
             print("OUT:", payload)

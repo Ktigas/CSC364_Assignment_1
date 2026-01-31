@@ -160,7 +160,6 @@ def processing_thread(connection, ip, port, forwarding_table_with_range, default
         # Router 6 routing logic
         if new_ttl <= 0:
             print("DISCARD:", new_packet)
-            write_to_file('./output/discarded_by_router_6.txt', new_packet)
         elif sending_port == '127.0.0.1':
             # Local delivery for 10.0.0.109/27 network
             print("OUT:", payload)
